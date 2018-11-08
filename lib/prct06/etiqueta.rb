@@ -1,7 +1,7 @@
 class Etiqueta
-  attr_reader :name, :g, :sat, :msat, :psat, :hid, :a, :palc, :alm, :fib, :pr, :sal
+  attr_reader :name, :cant, :npor, :g, :sat, :msat, :psat, :hid, :a, :palc, :alm, :fib, :pr, :sal, :vit, :min
 
-  def initialize(n,g,s,ms,ps,h,a,pa,al,fib,p,sal)
+  def initialize(n,cant,npor,g,s,ms,ps,h,a,pa,al,fib,p,sal,vit,min)
     @name = n    
     @g = g
     @sat = s

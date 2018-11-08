@@ -7,13 +7,21 @@ end
 
 RSpec.describe Etiqueta do
   before :each do
-    @et1 = Etiqueta.new("Cacaolat",0.5,0.3,0.2,0.1,4.3,4.1,0,0.2,3,2.7,0.11)
+    @et1 = Etiqueta.new("Cacaolat",200,1,0.5,0.3,0.2,0.1,4.3,4.1,0,0.2,3,2.7,0.11,0.15,0.1)
   end
 
   describe "# inicializacion de atributos" do
     
     it "Se almacena correctamente el nombre del articulo" do
       expect(@et1.name).to eq "Cacaolat"
+    end
+
+    it "Se almacena correctamente la cantidad por porcion en gramos" do
+      expect(@et1.cant).to eq(200)
+    end
+
+    it "Se almacena correctamente el numero de porciones" do
+      expect(@et1.npor).to eq(1)
     end
 
     it "Se almacena correctamente el valor de grasas" do
@@ -59,6 +67,15 @@ RSpec.describe Etiqueta do
     it "Se almacena correctamente el valor de las sales" do
       expect(@et1.sal).to eq(0.11)
     end
+
+    it "Se almacena correctamente el valor de las vitaminas" do
+      expect(@et1.vit).to eq(0.15)
+    end
+
+    it "Se almacena correctamente el valor de los minerales" do
+      expect(@et1.min).to eq(0.1)  
+    end
+  
   end
 
 end
