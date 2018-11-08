@@ -2,7 +2,9 @@ class Etiqueta
   attr_reader :name, :cant, :npor, :g, :sat, :msat, :psat, :hid, :a, :palc, :alm, :fib, :pr, :sal, :vit, :min
 
   def initialize(n,cant,npor,g,s,ms,ps,h,a,pa,al,fib,p,sal,vit,min)
-    @name = n    
+    @name = n
+    @cant = cant
+    @npor = npor    
     @g = g
     @sat = s
     @msat = ms
@@ -14,6 +16,8 @@ class Etiqueta
     @fib = fib
     @pr = p
     @sal = sal 
+    @vit = vit
+    @min = min
   end
 
 
