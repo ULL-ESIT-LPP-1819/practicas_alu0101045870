@@ -173,45 +173,48 @@ RSpec.describe Etiqueta do
   describe "# Calculo del porcentaje respecto a la Ingesta recomendada (%IR)" do
     context "Para 100 g" do
       it "Se realiza el calculo de la IR para el valor energetico" do
-	#expect(@et1.ir_val_ene_tot).to eq()
+	      expect(@et1.ir_val_ene_tot).to eq(1.97)
       end
       it "Se realiza el calculo de la IR para las grasas totales" do
-
+	      expect(@et1.ir_gras).to eq(0.71)
       end
       it "Se realiza el calculo de la IR para las grasas saturadas" do
-     
+	      expect(@et1.ir_gsat).to eq(1.5)
       end
       it "Se realiza el calculo de la IR para hidratos de carbono" do
-     
+	      expect(@et1.ir_hidr).to eq(1.65)
       end
       it "Se realiza el calculo de la IR para los azucares" do
-     
+	      expect(@et1.ir_a).to eq(4.56)
       end
       it "Se realiza el calculo de la IR para las proteinas" do
-     
+	      expect(@et1.ir_prot).to eq(5.4)
       end
       it "Se realiza el calculo de la IR para las sales" do
-     
+	      expect(@et1.ir_sal).to eq(1.83)
       end
     end
     context "Para las porciones" do
       it "Se realiza el calculo de la IR para el valor energetico" do
-     
+	      expect(@et1.ir_val_ene_por).to eq(3.9)
       end
       it "Se realiza el calculo de la IR para las grasas " do 
-     
+	      expect(@et1.ir_gras_por).to eq(1.43)
       end
       it "Se realiza el calculo de la IR para acidos grasos saturados" do
-     
+	      expect(@et1.ir_gsat_por).to eq(3)
+      end
+      it "Se realiza el calculo de la IR para hidratos" do
+              expect(@et1.ir_hidr_por).to eq(3.31)
       end
       it "Se realiza el calculo de la IR para azucares" do
-     
+	      expect(@et1.ir_a_por).to eq(9.11)
       end
       it "Se realiza el calculo de la IR para las proteinas" do
-     
+	      expect(@et1.ir_prot_por).to eq(10.8)
       end
       it "Se realiza el calculo de la IR para las sales" do
-     
+	      expect(@et1.ir_sal_por).to eq(3.67)
       end      
     end
   end
