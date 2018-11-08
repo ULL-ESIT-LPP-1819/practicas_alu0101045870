@@ -72,14 +72,6 @@ class Etiqueta
     (@cant/@npor).round(2)
   end
 
-  def val_ene_por_kj
-    (val_ene_kj/@npor).round(2)
-  end
-
-  def val_ene_por_kcal
-    (val_ene_kcal/@npor).round(2)
-  end
-
   def gras_por
     (g_porcion*@g/100).round(2)
   end
@@ -171,4 +163,12 @@ class Etiqueta
   def sal_por_kcal
     (sal_por*6).round(2)	  
   end
+
+  def val_ene_por_kj
+    (gras_por_kj + hidr_por_kj + fib_por_kj + prot_por_kj + sal_por_kj).round(2)
+  end
+
+  def val_ene_por_kcal
+    (gras_por_kcal + hidr_por_kcal + fib_por_kcal + prot_por_kcal + sal_por_kcal).round(2)
+  end 
 end
