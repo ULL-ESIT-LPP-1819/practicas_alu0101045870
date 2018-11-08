@@ -136,4 +136,39 @@ class Etiqueta
     (gras_por*37).round(2)
   end
 
+  def gras_por_kcal
+    (gras_por*9).round(2)
+  end
+
+  def hidr_por_kj
+    (hidr_por*17).round(2)
+  end
+
+  def hidr_por_kcal
+    (hidr_por*4).round(2)
+  end
+
+  def fib_por_kj
+    (fib_por*8).round(2)
+  end
+
+  def fib_por_kcal
+    (fib_por*2).round(2)
+  end
+
+  def prot_por_kj
+    (prot_por*17).round(2)	  
+  end
+
+  def prot_por_kcal
+    (prot_por*4).round(2)	  
+  end
+
+  def sal_por_kj
+    (sal_por*25).round(2)
+  end
+
+  def sal_por_kcal
+    (sal_por*6).round(2)	  
+  end
 end

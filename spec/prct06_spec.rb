@@ -140,24 +140,24 @@ RSpec.describe Etiqueta do
     end
     context "Valor energetico elementos individuales" do
       it "Se realiza el calculo del valor energetico para grasas" do
-        expect(@et1.gras_por_kj).to eq(0)
-	expect(@et1.gras_por_kcal).to eq(0)
+        expect(@et1.gras_por_kj).to eq(37)
+	expect(@et1.gras_por_kcal).to eq(9)
       end
       it "Se realiza el calculo del valor energetico para hidratos" do
-        expect(@et1.hidr_por_kj).to eq(0)
-	expect(@et1.hidr_por_kcal).to eq(0)
+	expect(@et1.hidr_por_kj).to eq(146.2)
+	expect(@et1.hidr_por_kcal).to eq(34.4)
       end
       it "Se realiza el calculo del valor energetico para la fibra alimentaria" do
-        expect(@et1.fib_por_kj).to eq(0)
-	expect(@et1.fib_por_kcal).to eq(0)
+        expect(@et1.fib_por_kj).to eq(48)
+	expect(@et1.fib_por_kcal).to eq(12)
       end
       it "Se realiza el calculo del valor energetico para las proteinas" do
-        expect(@et1.prot_por_kj).to eq(0)
-	expect(@et1.prot_por_kcal).to eq(0)
+	expect(@et1.prot_por_kj).to eq(91.8)
+	expect(@et1.prot_por_kcal).to eq(21.6)
       end
       it "Se realiza el calculo del valor energetico para las sales" do
-        expect(@et1.prot_por_kj).to eq(0)
-	expect(@et1.prot_por_kj).to eq(0)
+	expect(@et1.sal_por_kj).to eq(5.5)
+	expect(@et1.sal_por_kcal).to eq(1.32)
       end
     end
     context "Valor energetico total" do
