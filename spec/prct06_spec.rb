@@ -93,6 +93,16 @@ RSpec.describe Etiqueta do
     end
   end
 
-  
+  describe "# Calculo de valor energetico por porciones" do
+    it "Se realiza el calculo de gramos por porcion correctamente" do
+      expect(@et1.g_porcion).to eq(200)
+    end
+    it "Se realiza el calculo del valor energetico por porcion en kJ" do
+      expect(@et1.val_ene_por_kj).to eq(164.24)
+    end
+    it "Se realiza el calculo del valor energetico por porcion en kcal" do
+      expect(@et1.val_ene_por_kcal).to eq(39.16)
+    end
+  end  
 
 end

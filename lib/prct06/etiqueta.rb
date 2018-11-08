@@ -68,4 +68,16 @@ class Etiqueta
     val_gras_kcal + val_hidr_kcal + val_fib_kcal + val_prot_kcal + val_sal_kcal  
   end
 
+  def g_porcion
+    (@cant/@npor).truncate(2)
+  end
+
+  def val_ene_por_kj
+    (val_ene_kj/@npor).truncate(2)
+  end
+
+  def val_ene_por_kcal
+    (val_ene_kcal/@npor).truncate(2)
+  end
+
 end
