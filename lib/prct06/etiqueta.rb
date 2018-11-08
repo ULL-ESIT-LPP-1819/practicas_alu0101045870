@@ -80,4 +80,60 @@ class Etiqueta
     (val_ene_kcal/@npor).round(2)
   end
 
+  def gras_por
+    (g_porcion*@g/100).round(2)
+  end
+ 
+  def gsat_por
+    (g_porcion*@sat/100).round(2)
+  end 
+
+  def msat_por
+    (g_porcion*@msat/100).round(2)
+  end
+
+  def psat_por
+    (g_porcion*@psat/100).round(2)
+  end
+
+  def hidr_por
+    (g_porcion*@hid/100).round(2)
+  end
+
+  def a_por
+    (g_porcion*@a/100).round(2)
+  end
+  
+  def polia_por
+    (g_porcion*@palc/100).round(2)
+  end
+
+  def alm_por
+    (g_porcion*@alm/100).round(2)
+  end
+
+  def fib_por
+    (g_porcion*@fib/100).round(2)
+  end
+
+  def prot_por
+    (g_porcion*@pr/100).round(2)
+  end
+
+  def sal_por
+    (g_porcion*@sal/100).round(2)
+  end
+
+  def vit_por
+    (g_porcion*@vit/100).round(2)
+  end
+
+  def min_por
+    (g_porcion*@min/100).round(2)
+  end
+
+  def gras_por_kj
+    (gras_por*37).round(2)
+  end
+
 end
