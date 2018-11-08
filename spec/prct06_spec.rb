@@ -97,12 +97,95 @@ RSpec.describe Etiqueta do
     it "Se realiza el calculo de gramos por porcion correctamente" do
       expect(@et1.g_porcion).to eq(200)
     end
+    it "Se realiza el calculo de grasas correctamente" do
+      expect(@et1.gras_por).to eq(1)
+    end
+    it "Se realiza el calculo de grasas saturadas correctamente" do
+      expect(@et1.gsat_por).to eq(0.6)
+    end
+    it "Se realiza el calculo de grasas monosaturadas correctamente" do
+      expect(@et1.msat_por).to eq(0.4)
+    end
+    it "Se realiza el calculo de grasas polisaturadas correctamente" do
+      expect(@et1.psat_por).to eq(0.2)
+    end
+    it "Se realiza el calculo de hidratos correctamente" do
+      expect(@et1.hidr_por).to eq(8.6)
+    end
+    it "Se realiza el calculo de azucares correctamente" do
+      expect(@et1.a_por).to eq(8.2)
+    end
+    it "Se realiza el calculo de polialcoholes correctamente" do
+      expect(@et1.polia_por).to eq(0)
+    end
+    it "Se realiza el calculo de almidones correctamente" do
+      expect(@et1.alm_por).to eq(0.4)
+    end
+    it "Se realiza el calculo de fibra alimenticia correctamente "do
+      expect(@et1.fib_por).to eq(6)
+    end
+    it "Se realiza el calculo de proteinas correctamente" do
+      expect(@et1.prot_por).to eq(5.4)
+    end
+    it "Se realiza el calculo de sales correctamente" do
+      expect(@et1.sal_por).to eq(0.22)
+    end
+    it "Se realiza el calculo de vitaminas correctamente" do
+      expect(@et1.vit_por).to eq(0.3)
+    end
+    it "Se realiza el calculo de minerales correctamente" do
+      expect(@et1.min_por).to eq(0.22)
+    end
     it "Se realiza el calculo del valor energetico por porcion en kJ" do
-      expect(@et1.val_ene_por_kj).to eq(164.25)
+      expect(@et1.val_ene_por_kj).to eq(0)
     end
     it "Se realiza el calculo del valor energetico por porcion en kcal" do
-      expect(@et1.val_ene_por_kcal).to eq(39.16)
+      expect(@et1.val_ene_por_kcal).to eq(0)
     end
   end  
 
+  describe "# Calculo del porcentaje respecto a la Ingesta recomendada (%IR)" do
+    context "Para el total" do
+      it "Se realiza el calculo de la IR para el valor energetico" do
+	expect(@et1.ir_val_ene_tot).to eq()
+      end
+      it "Se realiza el calculo de la IR para las grasas totales" do
+     
+      end
+      it "Se realiza el calculo de la IR para acidos grasos saturados" do
+     
+      end
+      it "Se realiza el calculo de la IR para azucares" do
+     
+      end
+      it "Se realiza el calculo de la IR para las proteinas" do
+     
+      end
+      it "Se realiza el calculo de la IR para las sales" do
+     
+      end
+    end
+  
+    context "Para las porciones" do
+      it "Se realiza el calculo de la IR para el valor energetico" do
+     
+      end
+      it "Se realiza el calculo de la IR para las grasas totales" 
+     
+      end
+      it "Se realiza el calculo de la IR para acidos grasos saturados" do
+     
+      end
+      it "Se realiza el calculo de la IR para azucares" do
+     
+      end
+      it "Se realiza el calculo de la IR para las proteinas" do
+     
+      end
+      it "Se realiza el calculo de la IR para las sales" do
+     
+      end      
+    end
 end
+
+
