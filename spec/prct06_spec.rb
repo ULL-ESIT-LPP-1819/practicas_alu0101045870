@@ -173,7 +173,7 @@ RSpec.describe Etiqueta do
   describe "# Calculo del porcentaje respecto a la Ingesta recomendada (%IR)" do
     context "Para 100 g" do
       it "Se realiza el calculo de la IR para el valor energetico" do
-	      expect(@et1.ir_val_ene_tot).to eq(1.97)
+	      expect(@et1.ir_val_ene).to eq(1.96)
       end
       it "Se realiza el calculo de la IR para las grasas totales" do
 	      expect(@et1.ir_gras).to eq(0.71)
@@ -196,7 +196,7 @@ RSpec.describe Etiqueta do
     end
     context "Para las porciones" do
       it "Se realiza el calculo de la IR para el valor energetico" do
-	      expect(@et1.ir_val_ene_por).to eq(3.9)
+	      expect(@et1.ir_val_ene_por).to eq(3.91)
       end
       it "Se realiza el calculo de la IR para las grasas " do 
 	      expect(@et1.ir_gras_por).to eq(1.43)

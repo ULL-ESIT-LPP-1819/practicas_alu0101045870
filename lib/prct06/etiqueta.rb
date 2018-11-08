@@ -20,6 +20,8 @@ class Etiqueta
     @min = min
   end
 
+#CALCULO DE VALORES ENERGETICOS BASE 100g
+
   def val_gras_kj
     (@g * 37).round(2) 
   end
@@ -67,6 +69,8 @@ class Etiqueta
   def val_ene_kcal
     val_gras_kcal + val_hidr_kcal + val_fib_kcal + val_prot_kcal + val_sal_kcal  
   end
+
+#CALCULOS PARA PORCIONES: MASA Y VAL. ENERGETICO  
 
   def g_porcion
     (@cant/@npor).round(2)
@@ -170,5 +174,66 @@ class Etiqueta
 
   def val_ene_por_kcal
     (gras_por_kcal + hidr_por_kcal + fib_por_kcal + prot_por_kcal + sal_por_kcal).round(2)
+  end
+
+#CALCULO DE %IR 100g Y PORCIONES
+
+  def ir_gras
+    (@g*100/70).round(2)
+  end
+
+  def ir_gras_por
+    (gras_por*100/70).round(2)
   end 
+
+  def ir_gsat
+    (@sat*100/20).round(2)
+  end
+
+  def ir_gsat_por
+    (gsat_por*100/20).round(2)
+  end
+
+  def ir_hidr
+    (@hid*100/260).round(2)
+  end
+
+  def ir_hidr_por
+    (hidr_por*100/260).round(2) 
+  end
+
+  def ir_a
+    (@a*100/90).round(2)
+  end
+
+  def ir_a_por
+    (a_por*100/90).round(2)
+  end
+
+  def ir_prot
+    (@pr*100/50).round(2)
+  end
+
+  def ir_prot_por
+    (prot_por*100/50).round(2)	  
+  end
+
+  def ir_sal
+    (@sal*100/6).round(2)
+  end
+
+  def ir_sal_por
+    (sal_por*100/6).round(2)
+  end
+
+#TOTALES
+ 
+  def ir_val_ene
+    (val_ene_kj*100/8400).round(2)
+  end
+
+  def ir_val_ene_por
+    (val_ene_por_kj*100/8400).round(2)
+  end
+
 end
