@@ -21,43 +21,43 @@ class Etiqueta
   end
 
   def val_gras_kj
-    (@g * 37).truncate(2) 
+    (@g * 37).round(2) 
   end
 
   def val_gras_kcal
-    (@g * 9).truncate(2)	  
+    (@g * 9).round(2)	  
   end
 
   def val_hidr_kj
-    (@hid * 17).truncate(2)	  
+    (@hid * 17).round(2)	  
   end
 
   def val_hidr_kcal
-    (@hid * 4).truncate(2)	  
+    (@hid * 4).round(2)	  
   end
 
   def val_fib_kj
-    (@fib * 8).truncate(2)
+    (@fib * 8).round(2)
   end
 
   def val_fib_kcal
-    (@fib * 2).truncate(2)	  
+    (@fib * 2).round(2)	  
   end
 
   def val_prot_kj
-    (@pr * 17).truncate(2)
+    (@pr * 17).round(2)
   end
 
   def val_prot_kcal
-    (@pr * 4).truncate(2)
+    (@pr * 4).round(2)
   end
 
   def val_sal_kj
-    (@sal * 25).truncate(2)	  
+    (@sal * 25).round(2)	  
   end
 
   def val_sal_kcal
-    (@sal * 6).truncate(2)
+    (@sal * 6).round(2)
   end
 
   def val_ene_kj
@@ -69,15 +69,15 @@ class Etiqueta
   end
 
   def g_porcion
-    (@cant/@npor).truncate(2)
+    (@cant/@npor).round(2)
   end
 
   def val_ene_por_kj
-    (val_ene_kj/@npor).truncate(2)
+    (val_ene_kj/@npor).round(2)
   end
 
   def val_ene_por_kcal
-    (val_ene_kcal/@npor).truncate(2)
+    (val_ene_kcal/@npor).round(2)
   end
 
 end

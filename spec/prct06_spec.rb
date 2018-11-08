@@ -69,7 +69,7 @@ RSpec.describe Etiqueta do
 	expect(@et1.val_gras_kcal).to eq(4.5)
       end
       it "Se calcula correctamente el valor energetico de los hidratos" do
-	expect(@et1.val_hidr_kj).to eq(73.09)
+	expect(@et1.val_hidr_kj).to eq(73.1)
 	expect(@et1.val_hidr_kcal).to eq(17.2)
       end
       it "Se calcula correctamente el valor energetico de la fibra alim." do
@@ -87,7 +87,7 @@ RSpec.describe Etiqueta do
     end
     context "Para el total" do
       it "Se calcula el valor energetico total del producto" do
-	expect(@et1.val_ene_kj).to eq(164.24)
+	expect(@et1.val_ene_kj).to eq(164.25)
 	expect(@et1.val_ene_kcal).to eq(39.16)
       end
     end
@@ -98,7 +98,7 @@ RSpec.describe Etiqueta do
       expect(@et1.g_porcion).to eq(200)
     end
     it "Se realiza el calculo del valor energetico por porcion en kJ" do
-      expect(@et1.val_ene_por_kj).to eq(164.24)
+      expect(@et1.val_ene_por_kj).to eq(164.25)
     end
     it "Se realiza el calculo del valor energetico por porcion en kcal" do
       expect(@et1.val_ene_por_kcal).to eq(39.16)
