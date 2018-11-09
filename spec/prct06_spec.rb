@@ -218,5 +218,26 @@ RSpec.describe Etiqueta do
       end      
     end
   end
+
+  describe "# PRUEBA DEFINITIVA: to_s (salida formateada)" do
+    it "Se muestra la etiqueta " do
+    expect(@et1.to_s).to eq("-----------------------------------------------------------------------------\n" +
+			    "            | Por 100g/ml | IR por 100g/ml | Porcion de " + @et1.g_porcion.to_s + " g | IR porcion\n" +
+			    "Val.Ene kJ  | " + @et1.val_ene_kj.to_s + "  | " + @et1.ir_val_ene.to_s + "   | " + @et1.val_ene_por_kj.to_s + "   | " + @et1.ir_val_ene_por.to_s + "\n" +
+			    "        kcal| " + @et1.val_ene_kcal.to_s + "   |        | " + @et1.val_ene_por_kcal.to_s + "   |       \n" + 
+			    "Grasas      | " + @et1.g.to_s + "     | " + @et1.ir_gras.to_s + "   | " + @et1.gras_por.to_s + "     | " +  @et1.ir_gras_por.to_s + " \n" +
+			    " -Saturadas | " + @et1.sat.to_s + "     | " + @et1.ir_gsat.to_s + "    | " + @et1.gsat_por.to_s + "     | " + @et1.ir_gsat_por.to_s + " \n" +
+			    " -Monosat.  | " + @et1.msat.to_s + "     |        | " + @et1.msat_por.to_s + "     | \n" +
+			    " -Polisat.  | " + @et1.psat.to_s + "     |        | " + @et1.psat_por.to_s + "     | \n" + 
+			    " Hidratos   | " + @et1.hid.to_s + "     | " + @et1.ir_hidr.to_s + "   | " + @et1.hidr_por.to_s + "     | " + @et1.ir_hidr_por.to_s + "\n" +
+			    " -Azucares  | " + @et1.a.to_s + "     | " + @et1.ir_a.to_s + "   | " + @et1.a_por.to_s + "     | " + @et1.ir_a_por.to_s + "\n" +
+			    " -Polialc.  | " + @et1.palc.to_s + "       |        | " + @et1.polia_por.to_s + "       | \n" +
+			    " -Almid.    | " + @et1.alm.to_s + "     |        | " + @et1.alm_por.to_s + "     | \n" +
+			    " Fibra alim | " + @et1.fib.to_s + "       |        | " + @et1.fib_por.to_s + "       | \n" +
+			    " Proteinas  | " + @et1.pr.to_s + "     | " + @et1.ir_prot.to_s + "    | " + @et1.prot_por.to_s + "     | " + @et1.ir_prot_por.to_s + "\n" +
+			    " Sales      | " + @et1.sal.to_s + "    | " + @et1.ir_sal.to_s + "   | " + @et1.sal_por.to_s + "    | " + @et1.ir_sal_por.to_s + "\n" +
+			    " Vit/Min    | " + @et1.vit.to_s + "/" + @et1.min.to_s + "   |       |         | \n")
+    end
+  end
 end
 

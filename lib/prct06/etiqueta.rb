@@ -236,4 +236,23 @@ class Etiqueta
     (val_ene_por_kj*100/8400).round(2)
   end
 
+  def to_s
+    "-----------------------------------------------------------------------------\n" +
+			    "            | Por 100g/ml | IR por 100g/ml | Porcion de " + g_porcion.to_s + " g | IR porcion\n" +
+			    "Val.Ene kJ  | " + val_ene_kj.to_s + "  | " + ir_val_ene.to_s + "   | " + val_ene_por_kj.to_s + "   | " + ir_val_ene_por.to_s + "\n" +
+			    "        kcal| " + val_ene_kcal.to_s + "   |        | " + val_ene_por_kcal.to_s + "   |       \n" + 
+			    "Grasas      | " + @g.to_s + "     | " + ir_gras.to_s + "   | " + gras_por.to_s + "     | " +  ir_gras_por.to_s + " \n" +
+			    " -Saturadas | " + @sat.to_s + "     | " + ir_gsat.to_s + "    | " + gsat_por.to_s + "     | " + ir_gsat_por.to_s + " \n" +
+			    " -Monosat.  | " + @msat.to_s + "     |        | " + msat_por.to_s + "     | \n" +
+			    " -Polisat.  | " + @psat.to_s + "     |        | " + psat_por.to_s + "     | \n" + 
+			    " Hidratos   | " + @hid.to_s + "     | " + ir_hidr.to_s + "   | " + hidr_por.to_s + "     | " + ir_hidr_por.to_s + "\n" +
+			    " -Azucares  | " + @a.to_s + "     | " + ir_a.to_s + "   | " + a_por.to_s + "     | " + ir_a_por.to_s + "\n" +
+			    " -Polialc.  | " + @palc.to_s + "       |        | " + polia_por.to_s + "       | \n" +
+			    " -Almid.    | " + @alm.to_s + "     |        | " + alm_por.to_s + "     | \n" +
+			    " Fibra alim | " + @fib.to_s + "       |        | " + fib_por.to_s + "       | \n" +
+			    " Proteinas  | " + @pr.to_s + "     | " + ir_prot.to_s + "    | " + prot_por.to_s + "     | " + ir_prot_por.to_s + "\n" +
+			    " Sales      | " + @sal.to_s + "    | " + ir_sal.to_s + "   | " + sal_por.to_s + "    | " + ir_sal_por.to_s + "\n" +
+			    " Vit/Min    | " + @vit.to_s + "/" + min.to_s + "   |       |         | \n"
+  end
+ 
 end
