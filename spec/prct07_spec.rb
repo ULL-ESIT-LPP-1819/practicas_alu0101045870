@@ -78,13 +78,15 @@ RSpec.describe Lista do
 	 expect(@list.get_head.value).to eq(@et2)
 	 expect(@list.get_tail.value).to eq(@et2)
       end
-      it "Desde posicion" do
-         expect(true).to eq(false)
-      end
     end
 
     it "La lista se muestra por pantalla correctamente(to_s)" do
-         expect(true).to eq(false)
+	    @list.insert_tail(@et1)
+	    @list.insert_tail(@et2)
+	    @list.insert_tail(@et3)
+	    @list.insert_tail(@et4)
+	    @list.insert_tail(@et5)
+	    expect(@list.to_s).to eq(@et1.to_s"\n"@et2.to_s"\n"@et3.to_s"\n"@et4.to_s"\n"@et5.to_s"\n")
     end
   end
 
