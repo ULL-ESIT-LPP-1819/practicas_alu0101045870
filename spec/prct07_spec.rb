@@ -93,7 +93,20 @@ RSpec.describe Lista do
   describe "# Procedimiento de clasificacion por gramos de sal" do
     
     it "El método funciona" do
-         expect(true).to eq(false)
+	    @s1 = Etiqueta.new("Sal",118, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7)
+	    @s2 = Etiqueta.new("Sal de baño", 500, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9)
+	    @list.insert_tail(@s1)
+	    @list.insert_tail(@et1)
+	    @list.insert_tail(@et2)
+	    @list.insert_tail(@et3)
+	    @list.insert_tail(@et4)
+	    @list.insert_tail(@s2)
+
+	    ans = @list.clasify
+
+	    expect(ans[0].length).to eq(4)
+	    expect(ans[1].length).to eq(2)
+
     end
 
   end
