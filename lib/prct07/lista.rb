@@ -145,6 +145,27 @@ class Lista
 	 	cad
 	end
 
+	def clasify
+	    sol = []
+	    ans1 = []
+	    ans2 = []
+
+	    pointer = @head
+
+	    while !(pointer.nil?)
+	        
+		if(pointer.value.sal < 6)
+		   ans1.append(pointer.value.sal)
+		else
+		   ans2.append(pointer.value.sal)
+		end
+
+		pointer = pointer.next
+	    end
+	
+	    sol.append(ans1,ans2)
+	end
+
 	private :head, :tail, :size
 
 end
