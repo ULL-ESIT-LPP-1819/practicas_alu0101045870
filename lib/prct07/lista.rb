@@ -7,6 +7,17 @@ class Lista
 		@size = 0
 	end
 
+	def get_head
+	  @head
+	end
+
+	def get_tail
+	  @tail
+	end
+
+	def get_size
+	  @size
+	end
 
 	private :head, :tail, :size
 
