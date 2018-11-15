@@ -26,10 +26,23 @@ RSpec.describe Lista do
       it "En head" do
       	@list.insert_head(@et1)
 	expect(@list.get_size).to eq(1)
+	expect(@list.get_head.value).to eq(@et1)
       end  
       it "En tail" do
 	@list.insert_tail(@et1)
 	expect(@list.get_size).to eq(1)
+	expect(@list.get_tail.value).to eq(@et1)
+      end
+
+      it "Inserciones concurrentes por head" do
+       
+        @list.insert_head(@et2)
+        @list.insert_head(@et3)
+	@list.insert_head(@et4)
+
+	expect(@list.item_at(1)).to eq(@et4)
+        expect(@list.item_at(2)).to eq(@et3)
+        expect(@list.item_at(3)).to eq(@et2)
       end
 
     end
@@ -47,21 +60,25 @@ RSpec.describe Lista do
 
     context "Se extrae un nodo correctamente" do
       it "Desde head" do
-
+         expect(true).to eq(false)
       end
       it "Desde tail" do
+         expect(true).to eq(false)
       end
       it "Desde posicion" do
+         expect(true).to eq(false)
       end
     end
 
     it "La lista se muestra por pantalla correctamente(to_s)" do
+         expect(true).to eq(false)
     end
   end
 
   describe "# Procedimiento de clasificacion por gramos de sal" do
     
     it "El método funciona" do
+         expect(true).to eq(false)
     end
 
   end
