@@ -60,10 +60,22 @@ RSpec.describe Lista do
 
     context "Se extrae un nodo correctamente" do
       it "Desde head" do
-         expect(true).to eq(false)
+ 	 @list.insert_head(@et1)    #Sabemos que funciona
+	 @list.insert_head(@et2)    #Sabemos que funciona. Orden et2 -> et1
+
+	 @list.extract_head
+	 expect(@list.get_size).to eq(1)
+	 expect(@list.get_head).to eq(@et1)
+	 expect(@list.get_tail).to eq(@et1)
       end
       it "Desde tail" do
-         expect(true).to eq(false)
+ 	 @list.insert_head(@et1)    #Sabemos que funciona
+	 @list.insert_head(@et2)    #Sabemos que funciona. Orden et2 -> et1
+
+	 @list.extract_tail
+	 expect(@list.get_size).to eq(1)
+	 expect(@list.get_head).to eq(@et2)
+	 expect(@list.get_tail).to eq(@et2)
       end
       it "Desde posicion" do
          expect(true).to eq(false)
