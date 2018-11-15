@@ -1,6 +1,8 @@
 class Lista
 	attr_accessor :head, :tail, :size
 
+	Node = Struct.new(:value, :next, :prev)
+
 	def initialize
 		@head = nil
 		@tail = nil

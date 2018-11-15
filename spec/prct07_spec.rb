@@ -19,4 +19,50 @@ RSpec.describe Lista do
         expect(@list.get_size).to eq(0)
     end
   end
+
+  describe "# Operaciones básicas de la lista" do
+    
+    context "Se inserta correctamente un nodo" do
+      it "En head" do
+      	@list.insert_head(@et1)
+	expect(@list.get_size).to eq(1)
+      end  
+      it "En tail" do
+	@list.insert_tail(@et1)
+	expect(@list.get_size).to eq(1)
+      end
+
+    end
+
+    it "Se puede acceder a la posicion x" do
+      @list.insert_head(@et1)  
+      @list.insert_head(@et2)  
+      @list.insert_head(@et3)  
+      @list.insert_head(@et4)  
+      @list.insert_head(@et5)
+
+      expect(@list.get_size).to eq(5)
+      expect(@list.item_at(3)).to eq(@et3)  
+    end
+
+    context "Se extrae un nodo correctamente" do
+      it "Desde head" do
+
+      end
+      it "Desde tail" do
+      end
+      it "Desde posicion" do
+      end
+    end
+
+    it "La lista se muestra por pantalla correctamente(to_s)" do
+    end
+  end
+
+  describe "# Procedimiento de clasificacion por gramos de sal" do
+    
+    it "El método funciona" do
+    end
+
+  end
 end
