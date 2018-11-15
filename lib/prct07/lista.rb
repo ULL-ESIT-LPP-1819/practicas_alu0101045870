@@ -134,8 +134,17 @@ class Lista
 	  nil
 	end
 
+        def to_s
+		cad = ""
+		pointer = @head
+		while !(pointer.nil?)
+		  cad += pointer.value.to_s
+		  cad += "\n"
+		  pointer = pointer.next
+		end
+	 	cad
+	end
+
 	private :head, :tail, :size
-
-
 
 end

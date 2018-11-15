@@ -86,7 +86,7 @@ RSpec.describe Lista do
 	    @list.insert_tail(@et3)
 	    @list.insert_tail(@et4)
 	    @list.insert_tail(@et5)
-	    expect(@list.to_s).to eq(@et1.to_s"\n"@et2.to_s"\n"@et3.to_s"\n"@et4.to_s"\n"@et5.to_s"\n")
+	    expect(@list.to_s).to eq(@et1.to_s + "\n" + @et2.to_s + "\n" + @et3.to_s + "\n" + @et4.to_s + "\n" + @et5.to_s + "\n")
     end
   end
 
