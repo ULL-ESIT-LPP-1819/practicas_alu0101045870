@@ -166,6 +166,35 @@ class Lista
 	    sol.append(ans1,ans2)
 	end
 
+	def clasify_p8
+	    sol = []
+	    low_w = []
+	    adq_w = []
+	    ove_w = []
+	    ob1_w = []
+	    ob2_w = []
+
+	    pointer = @head
+
+	    while !(pointer.nil?)
+		    val = pointer.value.imc
+		    if(val < 18.5)
+			    low_w.append(pointer.value)
+		    elsif(val > 18.5 and val < 24.9)
+			    adq_w.append(pointer.value) 
+		    elsif(val > 25.0 and val < 29.9) 
+			    ove_w.append(pointer.value)
+		    elsif(val > 30.0 and val < 34.9)
+			    ob1_w.append(pointer.value)
+		    elsif(val > 40) 
+			    ob2_w.append(pointer.value)
+	    
+		    end
+	    end
+	    
+	    sol.append(low_w,adq_w,ove_w,ob1_w,ob2_w)
+	end
+
 	private :head, :tail, :size
 
 end
