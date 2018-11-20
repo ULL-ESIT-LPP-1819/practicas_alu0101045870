@@ -44,9 +44,22 @@ RSpec.describe Paciente do
 			expect(@i1.respond_to?('to_s')).to be true
 		   end
 		end
-		it "Clase de objeto: " do
-		   expect(@p1.class == Paciente).to be true
-		   expect(@p1.instance_of?Paciente).to be true
+		context "Clase de objeto: " do
+		   it "Paciente:" do	
+		  	expect(@p1.class == Paciente).to be true
+		  	expect(@p1.instance_of?Paciente).to be true
+		   	expect(@p1.instance_of?Individuo).to be false
+		   end
+		   it "Lista:" do
+		  	expect(@list.class == Lista).to be true
+		  	expect(@list.instance_of?Lista).to be true
+		   end
+		   it "Individuo:" do
+		        @i1 = Individuo.new("Fernando", "Gonzalez", 1, 20)
+		  	expect(@i1.class == Individuo).to be true
+		  	expect(@i1.instance_of?Individuo).to be true
+		   	expect(@i1.instance_of?Paciente).to be false
+		   end
 		end
 		it "Pertenece a la jerarquía: " do
 		end
