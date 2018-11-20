@@ -188,8 +188,9 @@ class Lista
 			    ob1_w.append(pointer.value)
 		    elsif(val > 40) 
 			    ob2_w.append(pointer.value)
-	    
 		    end
+
+		    pointer = pointer.next
 	    end
 	    
 	    sol.append(low_w,adq_w,ove_w,ob1_w,ob2_w)

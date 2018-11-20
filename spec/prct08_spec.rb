@@ -84,6 +84,14 @@ RSpec.describe Paciente do
 
 	describe "#Pruebas de clasificación en lista: " do
 		it "La clasificación es correcta" do
+			@list.insert_head(@p1)
+			@list.insert_head(@p2)
+			@list.insert_head(@p3)
+			@list.insert_head(@p4)
+			@list.insert_head(@p5)
+			res = @list.clasify_p8
+			val = res[1][0].imc
+			expect(val.is_a?Float).to be true
 		end			
 	end
 	
