@@ -8,3 +8,7 @@ task :default => :spec
 task :p7 do
    sh 'bundle exec rspec ./spec/prct07_spec.rb'
 end
+
+task :p8 do
+   sh 'bundle exec rspec ./spec/prct08_spec.rb'
+end
