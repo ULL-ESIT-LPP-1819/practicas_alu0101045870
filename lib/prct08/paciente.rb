@@ -5,7 +5,8 @@ class Paciente < Individuo
 		@w, @size, @c_cint, @c_cad = w, size, c_cint, c_cad
 	end
 	def to_s
-		
+		a = super.to_s
+		return a + "(#{@w},#{@size},#{@c_cint},#{@c_cad})"		
 	end
 	def imc
 		size2 = @size*@size

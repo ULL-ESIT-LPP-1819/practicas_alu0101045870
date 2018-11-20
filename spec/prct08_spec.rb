@@ -83,6 +83,13 @@ RSpec.describe Paciente do
 	end
 
 	describe "#Pruebas de clasificación en lista: " do
-		
+		it "La clasificación es correcta" do
+		end			
+	end
+	
+	describe "#Prueba del to_s: " do
+		it "to_s" do
+		expect(@p1.to_s).to eq("(Fernando,González,1,20)(72,1.78,82,92)")
+		end
 	end	
 end
