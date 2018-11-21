@@ -90,8 +90,13 @@ RSpec.describe Paciente do
 			@list.insert_head(@p4)
 			@list.insert_head(@p5)
 			res = @list.clasify_p8
-			val = res[1][0].imc
-			expect(val.is_a?Float).to be true
+	
+			expect(res[0].size).to eq(0)
+			expect(res[1].size).to eq(2)
+			expect(res[2].size).to eq(1)
+			expect(res[3].size).to eq(2)
+			expect(res[4].size).to eq(0)
+					
 		end			
 	end
 	
