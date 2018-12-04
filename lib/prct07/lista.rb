@@ -1,7 +1,17 @@
 class Lista
+
+	include Enumerable
 	attr_accessor :head, :tail, :size
 
 	Node = Struct.new(:value, :next, :prev)
+
+	def each
+		pointer = @head
+		while !(pointer.nil?)
+			yield pointer.value 
+			pointer = pointer.next
+		end
+	end
 
 	def initialize
 		@head = nil
