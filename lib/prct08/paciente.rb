@@ -1,5 +1,13 @@
 class Paciente < Individuo
+	
+	include Comparable
+	
 	attr_reader :w, :size, :c_cint, :c_cad
+	
+	def <=>(anOther)
+		imc <=> anOther.imc
+	end
+	
 	def initialize(name, surn, gen, age, w, size, c_cint, c_cad)
 		super(name,surn,gen,age)
 		@w, @size, @c_cint, @c_cad = w, size, c_cint, c_cad

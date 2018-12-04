@@ -1,5 +1,11 @@
 class Etiqueta
+	
+  include Comparable
   attr_reader :name, :cant, :npor, :g, :sat, :msat, :psat, :hid, :a, :palc, :alm, :fib, :pr, :sal, :vit, :min
+
+  def <=>(anOther)
+    val_ene_kj <=> anOther.val_ene_kj
+  end
 
   def initialize(n,cant,npor,g,s,ms,ps,h,a,pa,al,fib,p,sal,vit,min)
     @name = n
