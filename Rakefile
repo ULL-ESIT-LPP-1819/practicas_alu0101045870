@@ -12,3 +12,7 @@ end
 task :p8 do
    sh 'bundle exec rspec ./spec/prct08_spec.rb'
 end
+
+task :p9 do
+   sh 'bundle exec rspec ./spec/prct09_spec.rb'
+end

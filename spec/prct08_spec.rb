@@ -102,6 +102,7 @@ RSpec.describe Paciente do
 	
 	describe "#Prueba del to_s: " do
 		it "to_s" do
+
 		expect(@p1.to_s).to eq("(Fernando,González,1,20)(72,1.78,82,92)")
 		end
 	end	
