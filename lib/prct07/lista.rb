@@ -1,10 +1,33 @@
+# Clase Lista, representando una DLL (double linked list) para el almacenamiento de objetos en Ruby, con sus 
+# funcionalidades esenciales 
+#  
+# # @author Fernando González Petit
+# # @since 0.1.0
+# # @attr_reader head: [Node] Referencia a la primera posición de la lista
+# 		 tail: [Node] Referencia a la última posición de la lista
+# 		 size: [Integer] Tamaño actual de la lista
+#
+# Incluye utilidades del módulo Enumerable
 class Lista
 
 	include Enumerable
 	attr_accessor :head, :tail, :size
 
+	#Struct Node. Actúa como nodo dentro de la lista
+	#Contiene un :value -> Objeto en el nodo, 
+	#	     :next  -> Referencia al siguiente nodo en la lista
+	#	     :prev  -> Referencia al anterior nodo en la lista
 	Node = Struct.new(:value, :next, :prev)
 
+	# Método each para utilidades de enumerable 
+	#
+	# @author Fernando González Petit
+	#
+	# @see http://ruby-doc.org/core-2.1.4/Enumerable.html
+	#
+	# @public
+	#
+	# [yield] Objeto dentro del nodo en la posición del recorrido secuencial de la lista
 	def each
 		pointer = @head
 		while !(pointer.nil?)
@@ -13,28 +36,39 @@ class Lista
 		end
 	end
 
+	# Las listas se inicializan vacías y con tamaño cero
 	def initialize
 		@head = nil
 		@tail = nil
 		@size = 0
 	end
 
+	# @return Head actual
 	def get_head
 	  @head
 	end
 
+	# @return Tail actual
 	def get_tail
 	  @tail
 	end
 
+	# @return Size actual
 	def get_size
 	  @size
 	end
-
+        
+	# @return [Boolean, true]  Si el tamaño es 0
+	#  	  [Boolean, false] Si el tamaño es mayor que 0
 	def empty
 	  return (size == 0)
 	end
 
+	# Método que inserta el elemento etiqueta a la cabeza de la lista
+	#
+	# @author Fernando González Petit
+	#
+	# @param etiqueta Cualquier objeto
         def insert_head(etiqueta)
 	    #prev va a ser vacio siempre
 	    nod = Node.new(etiqueta, nil, nil)
@@ -56,6 +90,12 @@ class Lista
 	    nil  
 	end
 
+
+	# Método que inserta el elemento etiqueta a la cola de la lista
+	#
+	# @author Fernando González Petit
+	#
+	# @param etiqueta Cualquier objeto
 	def insert_tail(etiqueta)
 	    #next va a ser vacio siempre
 	    nod = Node.new(etiqueta, nil, nil)
@@ -77,6 +117,13 @@ class Lista
 	    nil
 	end
 
+	# Método que obtiene el elemento en la posición pos de la lista
+	#
+	# @author Fernando González Petit
+	#
+	# @param pos [Integer] posición en la lista
+	#
+	# @return Elemento seleccionado
 	def item_at(pos)
            if(pos <= size)	    
 		var = 1
@@ -93,6 +140,9 @@ class Lista
 	   pointer.value
 	end
 
+	# Duplicación del método item_at pero realizando la búsqueda desde la cola
+	#
+	# @see Lista::item_at
 	def item_at_t(pos)
 	
            if(pos <= size)	    
@@ -110,6 +160,9 @@ class Lista
 	   pointer.value
 	end
 
+	# Equivalente al pop_head. Extrae el elemento en la cabeza de la lista
+	#
+	# @return Objeto en el nodo extraído, en caso de haberlo
 	def extract_head
 	  if(@size > 0)
 	    v = @head
@@ -127,6 +180,9 @@ class Lista
           nil
 	end
 
+	# Equivalente al pop_tail. Extrae el elemento en la cola de la lista
+	#
+	# @return Objeto en el nodo extraído, en caso de haberlo
 	def extract_tail
 	  if(@size > 0)
 	    v = @tail
@@ -144,6 +200,7 @@ class Lista
 	  nil
 	end
 
+	# Devuelve en forma de cadena una salida formateada de todos los elementos en la lista por orden
         def to_s
 		cad = ""
 		pointer = @head
@@ -154,7 +211,13 @@ class Lista
 		end
 	 	cad
 	end
-
+	
+	# Método específico para uso de listas de objetos de la clase Etiqueta
+	# Ordena las Etiquetas en la lista por sus valores aceptables de sal
+	#
+	# @see Etiqueta
+	#
+	# @return Un array bidimensional - Contiene dos vectores, cada uno con las Etiquetas con mucha/poca sal, respectivamente
 	def clasify
 	    sol = []
 	    ans1 = []
@@ -176,6 +239,12 @@ class Lista
 	    sol.append(ans1,ans2)
 	end
 
+	# Método específico para uso de listas de objetos de la clase Paciente
+	# Clasifica en función de su peso a Individuos con historial médico (Paciente)
+	#
+	# @see Paciente
+	#
+	# @return Array bidimensional con los pacientes ordenados por su peso en distintos vectores
 	def clasify_p8
 	    sol = []
 	    low_w = []

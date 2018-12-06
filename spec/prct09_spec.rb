@@ -85,7 +85,7 @@ RSpec.describe Lista do
 	end
 
 	describe "Las instancias de Lista son enumerables" do
-		it "Método each: " do
+		it "Método each " do
 			@etlist.each{ |i| puts "* #{i.to_s}" }
 			@paclist.each{ |i| puts "* #{i.to_s}" }			
 		end
