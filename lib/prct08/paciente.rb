@@ -110,6 +110,16 @@ class Paciente < Individuo
 	def gasto_ene_total(f_act_f)
 		gasto_ene_basal + efecto_term + gasto_act_fis(f_act_f)
 	end
+
+	def calorias_suficientes(f_act_f, calorias)
+		porc_l = gasto_ene_total(f_act_f) - (gasto_ene_total(f_act_f) * 0.10)
+		porc_u = gasto_ene_total(f_act_f) + (gasto_ene_total(f_act_f) * 0.10)
+		if(calorias.between?(porc_l, porc_u))
+			return true
+		else
+			return false
+		end
+	end
 end
 
 

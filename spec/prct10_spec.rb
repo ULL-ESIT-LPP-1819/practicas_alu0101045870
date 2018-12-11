@@ -54,9 +54,13 @@ RSpec.describe Lista do
 
 	describe " # Recuperar total de valor energético del menú: " do
 		it "Sumatorio de elementos del menú" do
-			expect(@menu.reduce(0){|sum, num| (sum + num.val_ene_kcal).round(2) }).to eq(489.16)		
+			@calorias_menu = @menu.reduce(0){|sum, num| (sum + num.val_ene_kcal).round(2) }
+			expect(@calorias_menu).to eq(489.16)		
 		end
 
-			
+		it "Comprobación de rango en el menú para los distintos usuarios" do
+			@calorias_menu = @menu.reduce(0){|sum, num| (sum + num.val_ene_kcal).round(2) }
+			expect(@lpac.select{|i| i.calorias_suficientes(0.12, @calorias_menu) }).to eq([])			
+		end	
 	end
 end
