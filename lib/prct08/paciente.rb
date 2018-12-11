@@ -84,6 +84,32 @@ class Paciente < Individuo
 		@pl_sup /= 3
 		@pl_sup.truncate(2)
 	end
+
+	# Requerimiento energético de individuo en estado sedentario o de reposo
+	def gasto_ene_basal
+		if(@gen == 0)
+			@g_ene_b = (10 * @w) + (6.25 * @size) - (5 * @age) - 161
+		else
+			@g_ene_b = (10 * @w) + (6.25 * @size) - (5 * @age) - 5
+		end
+		@g_ene_b.truncate(2)
+	end
+
+	# Gasto energético requerido para procesar los alimentos
+	def efecto_term
+		@ef_ter = (gasto_ene_basal * 0.10).truncate(2)
+	end
+
+	# A partir del factor de actividad física
+	def gasto_act_fis(f_act_f)
+		@g_act_f = (gasto_ene_basal * f_act_f).truncate(2)
+	end
+
+	# A partir de los valores en gasto energético basal, efecto termógeno y gasto actividad
+	# física
+	def gasto_ene_total(f_act_f)
+		gasto_ene_basal + efecto_term + gasto_act_fis(f_act_f)
+	end
 end
 
 
