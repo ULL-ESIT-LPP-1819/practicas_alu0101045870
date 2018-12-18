@@ -277,4 +277,7 @@ class Lista
 
 	private :head, :tail, :size
 
+
+	
+
 end

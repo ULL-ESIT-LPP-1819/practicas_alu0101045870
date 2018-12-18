@@ -191,7 +191,7 @@ class Etiqueta
   #
   # @return [float] Valor energético total en kiloJulios
   def val_ene_kj
-    val_gras_kj + val_hidr_kj + val_fib_kj + val_prot_kj + val_sal_kj	  
+	  (val_gras_kj + val_hidr_kj + val_fib_kj + val_prot_kj + val_sal_kj).round(2)	  
   end
 
   # Valor energético total (kcal) en base a 100 g de producto
@@ -203,7 +203,7 @@ class Etiqueta
   #
   # @return [float] Valor energético total en kiloCalorías
   def val_ene_kcal
-    val_gras_kcal + val_hidr_kcal + val_fib_kcal + val_prot_kcal + val_sal_kcal  
+	  (val_gras_kcal + val_hidr_kcal + val_fib_kcal + val_prot_kcal + val_sal_kcal).round(2)  
   end
 
 #CALCULOS PARA PORCIONES: MASA Y VAL. ENERGETICO  
