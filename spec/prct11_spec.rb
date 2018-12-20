@@ -26,6 +26,27 @@ RSpec.describe Etiqueta do
 
 end
 
+RSpec.describe Paciente do
+	before :all do
+	
+		@p1 = Paciente.new("Fernando", "González", 1, 20, 72, 1.78, 82, 92)
+		@p2 = Paciente.new("Jorge", "González", 1, 20, 104, 1.85, 80, 91)
+		@p3 = Paciente.new("Miriam","Rodríguez", 0, 24, 52, 1.57, 64, 86)
+		@p4 = Paciente.new("Kevin", "García", 1, 20, 90, 1.78, 102, 107)
+		@p5 = Paciente.new("Rey", "Misterio", 0, 43, 92, 1.65, 85, 92) 	
+
+	end
+
+	it "Gasto energético total" do
+	
+		expect(@p1.gasto_ene_total(0.12)).to eq(763.86)
+		expect(@p2.gasto_ene_total(0.12)).to eq(1154.79)
+		expect(@p3.gasto_ene_total(0.12)).to eq(303.54)
+		expect(@p4.gasto_ene_total(0.12)).to eq(983.46)
+		expect(@p5.gasto_ene_total(0.12)).to eq(676.25)
+	end
+end
+
 RSpec.describe Lista do
 
 	before :all do
@@ -63,6 +84,8 @@ RSpec.describe Lista do
 		@list.insert_head(@p3)
 		@list.insert_head(@p4)
 		@list.insert_head(@p5)
+
+		@sorted_list = [@p3, @p5, @p1, @p4, @p2]
 	end
 
 	describe "# Contenedores" do
@@ -112,11 +135,13 @@ RSpec.describe Lista do
 		context "Lista" do
 
 			it "Sort con for" do
-								
+				array_o = @list.my_sort_for
+				expect(array_o).to eq(@sorted_list)		
 			end
 
 			it "Sort con each" do
-				
+				array_o = @list.my_sort_each
+				expect(array_o).to eq(@sorted_list)		
 			end	
 
 			it "Sort para lista " do
