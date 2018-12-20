@@ -1,3 +1,6 @@
+require 'benchmark'
+include Benchmark
+
 RSpec.describe Etiqueta do
 
 	before :all do
@@ -130,6 +133,17 @@ RSpec.describe Lista do
 
 				expect(array_o).to eq([@menuX, @menu5, @menu8, @menu9, @menu3, @menu6, @menu4, @menu1, @menu2, @menu7])
 			end
+
+			it "Benchmark" do
+				Benchmark.benchmark(CAPTION, 7, FORMAT, ">total:", ">avg:") do |x|
+					tf = x.report("for:") { @array.my_sort_for }
+					te = x.report("each:") { @array.my_sort_each }
+					ts = x.report("sort:") { @array.sort do |h, y|
+						h.reduce(0){|sum, i| sum + i.val_ene_kcal} <=> y.reduce(0){|sum, i| sum + i.val_ene_kcal}
+					end }
+					[tf+te+ts, (tf+te+ts)/3]
+				end
+			end
 		end
 
 		context "Lista" do
@@ -149,6 +163,16 @@ RSpec.describe Lista do
 					x.gasto_ene_total(0.12) <=> y.gasto_ene_total(0.12)
 				end	
 
+			end
+			it "Benchmark" do
+				Benchmark.benchmark(CAPTION, 7, FORMAT, ">total:", ">avg:") do |x|
+					tf = x.report("for:") { @list.my_sort_for }
+					te = x.report("each:") { @list.my_sort_each }
+					ts = x.report("sort:") { @list.sort do |h, y|
+						h.gasto_ene_total(0.12) <=> y.gasto_ene_total(0.12) 
+					end }
+					[tf+te+ts, (tf+te+ts)/3]
+				end
 			end
 		end
 	end
