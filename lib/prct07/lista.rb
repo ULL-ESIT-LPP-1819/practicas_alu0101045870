@@ -278,6 +278,10 @@ class Lista
 	private :head, :tail, :size
 
 
-	
+	def my_sort_for
+		
+
+	end
+
 
 end

@@ -11,12 +11,16 @@ RSpec.describe Etiqueta do
 
 	describe "Valores energéticos" do
 		it "De las etiquetas" do
-			expect(@et1.val_ene_kj).to eq(164.25)
-			expect(@et2.val_ene_kj).to eq(643.65)
-			expect(@et3.val_ene_kj).to eq(613.25)
-			expect(@et4.val_ene_kj).to eq(640.1)
-			expect(@et5.val_ene_kj).to eq(1199)
+			expect(@et1.val_ene_kcal).to eq(39.16)
+			expect(@et2.val_ene_kcal).to eq(152.7)
+			expect(@et3.val_ene_kcal).to eq(145.52)
+			expect(@et4.val_ene_kcal).to eq(151.78)
+			expect(@et5.val_ene_kcal).to eq(286.08)
 		
+		end
+
+		it "Suma de etiquetas" do
+			expect(@et1 + @et2).to eq(191.86)
 		end
 	end
 
@@ -50,6 +54,7 @@ RSpec.describe Lista do
 		@menuX = [@et1]
 
 		@array = [@menu1, @menu2, @menu3, @menu4, @menu5, @menu6, @menu7, @menu8, @menu9, @menuX]
+		@sorted_array = [@menuX, @menu5, @menu8, @menu9, @menu3, @menu6, @menu4, @menu1, @menu2, @menu7]
 
 		@list = Lista.new
 		
@@ -84,21 +89,42 @@ RSpec.describe Lista do
 	end
 
 	describe "# Métodos de ordenación" do
-		it "Sort para array " do	
-			array_ordenado = @array.sort do
-			|x,y| x.reduce(0){|sum1, i| (sum1 + i.val_ene_kj)} <=> y.reduce(0){|sum2, j| (sum2 + j.val_ene_kj)}
-				
+		context "Array" do
+			it "Sort con for " do
+				array_o = @array.my_sort_for
+				expect(array_o).to eq(@sorted_array)	
 			end
-		
+
+			it "Sort con each " do
+				array_o = @array.my_sort_each
+				expect(array_o).to eq(@sorted_array)	
+			end
+
+			it "Sort tradicional para array " do	
+				array_o = @array.sort do |x,y|
+					x.reduce(0){|sum, i| sum + i.val_ene_kcal } <=> y.reduce(0){|sum, j| sum + j.val_ene_kcal }
+				end
+
+				expect(array_o).to eq([@menuX, @menu5, @menu8, @menu9, @menu3, @menu6, @menu4, @menu1, @menu2, @menu7])
+			end
 		end
 
-		it "Sort para lista " do
-		
-			lista_ordenada = @list.sort do
-			|x,y| x.gasto_ene_total(0.12) <=> y.gasto_ene_total(0.12)
-			end 
-		
+		context "Lista" do
 
+			it "Sort con for" do
+								
+			end
+
+			it "Sort con each" do
+				
+			end	
+
+			it "Sort para lista " do
+				lista_o = @list.sort do |x, y|
+					x.gasto_ene_total(0.12) <=> y.gasto_ene_total(0.12)
+				end	
+
+			end
 		end
 	end
 

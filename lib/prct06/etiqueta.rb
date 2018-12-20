@@ -729,5 +729,15 @@ class Etiqueta
 			    " Sales      | " + @sal.to_s + "    | " + ir_sal.to_s + "   | " + sal_por.to_s + "    | " + ir_sal_por.to_s + "\n" +
 			    " Vit/Min    | " + @vit.to_s + "/" + min.to_s + "   |       |         | \n"
   end
- 
+
+  # Sobrecarga del operador suma para etiquetas
+  #
+  # @author Fernando González Petit
+  #
+  # @public
+  def +(anOther)
+	  (self.val_ene_kcal + anOther.val_ene_kcal).round(2)
+  end
+
+
 end
