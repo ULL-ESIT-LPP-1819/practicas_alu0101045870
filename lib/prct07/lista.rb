@@ -277,4 +277,49 @@ class Lista
 
 	private :head, :tail, :size
 
+	def my_sort_for
+		result = []
+		self.map.with_index{ |x, i| result.insert(i, x) }
+
+		n = result.length
+
+		loop do
+			swapped = false
+
+			for i in 0...(n-1)
+				if (result[i].gasto_ene_total(0.12) > result[i+1].gasto_ene_total(0.12))
+					result[i], result[i+1] = result[i+1], result[i]		
+					swapped = true
+				end
+			end
+
+			break if not swapped
+		end
+
+		result
+
+	end
+
+	def my_sort_each
+		result = []
+		self.map.with_index{ |x, i| result.insert(i, x) }
+
+		n = result.length-1
+
+		loop do
+			swapped = false
+
+			n.times.each do |i|
+				if (result[i].gasto_ene_total(0.12) > result[i+1].gasto_ene_total(0.12))
+					result[i], result[i+1] = result[i+1], result[i]		
+					swapped = true
+				end
+			end
+
+			break if not swapped
+		end
+
+		result
+
+	end
 end

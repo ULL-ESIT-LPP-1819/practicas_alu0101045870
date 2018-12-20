@@ -108,7 +108,7 @@ class Paciente < Individuo
 	# A partir de los valores en gasto energético basal, efecto termógeno y gasto actividad
 	# física
 	def gasto_ene_total(f_act_f)
-		gasto_ene_basal + efecto_term + gasto_act_fis(f_act_f)
+		(gasto_ene_basal + efecto_term + gasto_act_fis(f_act_f)).round(2)
 	end
 
 	def calorias_suficientes(f_act_f, calorias)
