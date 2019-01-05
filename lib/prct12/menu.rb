@@ -36,5 +36,10 @@ class Menu
 		@title = titl
 	end
 
+	def ingesta(options = {})
+		@min = options[:min] if options[:min]
+	        @max = options[:max] if options[:max]	
+	end
+
 end
 

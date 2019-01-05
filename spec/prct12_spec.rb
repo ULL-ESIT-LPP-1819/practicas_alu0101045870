@@ -15,6 +15,17 @@ RSpec.describe Menu do
 			expect(menu_lunes.lunch).to eq([])
 			expect(menu_lunes.dinner).to eq([])
 		end
+
+		it "Con bloque" do
+			menu_lunes = Menu.new("Lunes") do
+				titulo	"Bajo en calorías"
+				ingesta	:min => 30, :max => 35
+			end
+
+			expect(menu_lunes.title).to eq("Bajo en calorías")
+			expect(menu_lunes.min).to eq(30)
+			expect(menu_lunes.max).to eq(35)
+		end
 	
 	end
 end
