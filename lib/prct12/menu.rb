@@ -41,5 +41,94 @@ class Menu
 	        @max = options[:max] if options[:max]	
 	end
 
+	def desayuno(options = {})
+		descripcion = "Comida"
+		porcion = ""
+		cant = 0
+		g = 0
+		hid = 0
+		p = 0
+		fib = 0
+		sal = 0
+
+		descripcion = options[:descripcion] if options[:descripcion]
+		porcion = "(#{options[:porcion]})" if options[:porcion]
+		descripcion << porcion
+		
+		cant = options[:gramos] if options[:gramos]
+
+		g = options[:grasas] if options[:grasas]
+
+		hid = options[:carbohidratos] if options[:carbohidratos]
+		p = options[:proteinas] if options[:proteinas]
+		fib = options[:fibra] if options[:fibra]
+
+		sal = options[:sal] if options[:sal]
+
+		des = Etiqueta.new(descripcion, cant, 1, g, 0, 0, 0, hid, 0, 0, 0, fib, p, sal, 0, 0)
+
+		@breakfast << des
+	end
+
+
+	def almuerzo(options = {})
+		descripcion = "Comida"
+		porcion = ""
+		cant = 0
+		g = 0
+		hid = 0
+		p = 0
+		fib = 0
+		sal = 0
+
+		descripcion = options[:descripcion] if options[:descripcion]
+		porcion = "(#{options[:porcion]})" if options[:porcion]
+		descripcion << porcion
+		
+		cant = options[:gramos] if options[:gramos]
+
+		g = options[:grasas] if options[:grasas]
+
+		hid = options[:carbohidratos] if options[:carbohidratos]
+		p = options[:proteinas] if options[:proteinas]
+		fib = options[:fibra] if options[:fibra]
+
+		sal = options[:sal] if options[:sal]
+
+		alm = Etiqueta.new(descripcion, cant, 1, g, 0, 0, 0, hid, 0, 0, 0, fib, p, sal, 0, 0)
+
+		@lunch << des
+
+	end
+
+	
+	def cena(options = {})
+		descripcion = "Comida"
+		porcion = ""
+		cant = 0
+		g = 0
+		hid = 0
+		p = 0
+		fib = 0
+		sal = 0
+
+		descripcion = options[:descripcion] if options[:descripcion]
+		porcion = "(#{options[:porcion]})" if options[:porcion]
+		descripcion << porcion
+		
+		cant = options[:gramos] if options[:gramos]
+
+		g = options[:grasas] if options[:grasas]
+
+		hid = options[:carbohidratos] if options[:carbohidratos]
+		p = options[:proteinas] if options[:proteinas]
+		fib = options[:fibra] if options[:fibra]
+
+		sal = options[:sal] if options[:sal]
+
+		cen = Etiqueta.new(descripcion, cant, 1, g, 0, 0, 0, hid, 0, 0, 0, fib, p, sal, 0, 0)
+
+		@dinner << cen
+	end
 end
 
