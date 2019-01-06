@@ -72,7 +72,7 @@ class Menu
 
 
 	def almuerzo(options = {})
-		descripcion = "Comida"
+		descripcion = "Comida"	
 		porcion = ""
 		cant = 0
 		g = 0
@@ -97,7 +97,7 @@ class Menu
 
 		alm = Etiqueta.new(descripcion, cant, 1, g, 0, 0, 0, hid, 0, 0, 0, fib, p, sal, 0, 0)
 
-		@lunch << des
+		@lunch << alm
 
 	end
 
