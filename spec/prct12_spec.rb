@@ -72,7 +72,16 @@ RSpec.describe Menu do
 
 			expect(menu_lunes.breakfast.empty?).to be false
 			expect(menu_lunes.breakfast[0].name).to eq("Pan de trigo integral(1 rodaja)")
+		
+		
+			output = menu_lunes.to_s
+
+			expect(output).to eq(output)
+
 		end
 	
 	end
+
+
+
 end

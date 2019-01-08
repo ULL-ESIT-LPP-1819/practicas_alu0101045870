@@ -130,5 +130,47 @@ class Menu
 
 		@dinner << cen
 	end
+
+	def to_s
+		output = @day
+		output << "#{'	' * 3} #{@title} "
+		output << "\n#{'=' * 40 } "
+		output << "\n\t\t\t\tgrasas\tcarbohidratos\t\tproteinas\tfibra\tsal\tvalor energetico"
+		output << "\nDesayuno\n"
+		@breakfast.each do |etiqueta|
+			output << "#{etiqueta.name}\t\t"
+			output << "#{etiqueta.g}\t"
+			output << "#{etiqueta.hid}\t"
+			output << "#{etiqueta.pr}\t"
+			output << "#{etiqueta.fib}\t"
+			output << "#{etiqueta.sal}\t"
+			output << "#{etiqueta.val_ene_kcal}\t"
+		end
+
+		output << "\n\nAlmuerzo\n"		
+		@lunch.each do |etiqueta|
+			output << "#{etiqueta.name}\t\t"
+			output << "#{etiqueta.g}\t"
+			output << "#{etiqueta.hid}\t"
+			output << "#{etiqueta.pr}\t"
+			output << "#{etiqueta.fib}\t"
+			output << "#{etiqueta.sal}\t"
+			output << "#{etiqueta.val_ene_kcal}\t"
+		end
+
+		output << "\n\nCena\n"
+		@dinner.each do |etiqueta|
+			output << "#{etiqueta.name}\t\t"
+			output << "#{etiqueta.g}\t"
+			output << "#{etiqueta.hid}\t"
+			output << "#{etiqueta.pr}\t"
+			output << "#{etiqueta.fib}\t"
+			output << "#{etiqueta.sal}\t"
+			output << "#{etiqueta.val_ene_kcal}\t"
+		end
+
+		output
+	end
+
 end
 
